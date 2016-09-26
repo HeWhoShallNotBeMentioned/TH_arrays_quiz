@@ -16,6 +16,13 @@ function print(message) {
 }
 
 for (var z = 0; z < questions.length; z += 1) {
-  question = questions[i][0];
-  answer = questions[i][1];
+  question = questions[z][0];
+  answer = questions[z][1];
+  response = parseInt(prompt(question));
+  if (response === answer) {
+    correctAnswers += 1;
+  }
 }
+
+html = "You got " + correctAnswers + " question(s) right.";
+print(html);

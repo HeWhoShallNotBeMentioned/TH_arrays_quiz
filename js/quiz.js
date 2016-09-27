@@ -8,11 +8,16 @@ var correctAnswers = 0;
 var question;
 var answer;
 var response;
-var html;
+var correct = [];
+var wrong = [];
 
 
 function print(message) {
   document.write(message);
+}
+
+function buildList(arr) {
+
 }
 
 for (var z = 0; z < questions.length; z += 1) {
@@ -21,6 +26,9 @@ for (var z = 0; z < questions.length; z += 1) {
   response = parseInt(prompt(question));
   if (response === answer) {
     correctAnswers += 1;
+    correct.push(question);
+  } else {
+    wrong.push(question);
   }
 }
 

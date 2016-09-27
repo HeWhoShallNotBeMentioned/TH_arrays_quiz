@@ -17,7 +17,12 @@ function print(message) {
 }
 
 function buildList(arr) {
-
+  var listHTML = '<ol>';
+    for (var z = 0; z < arr.length; z += 1 ) {
+      listHTML += '<li>' + arr[z] + '</li>';
+    }
+    listHTML += '</ol>';
+    return listHTML;
 }
 
 for (var z = 0; z < questions.length; z += 1) {
@@ -33,4 +38,8 @@ for (var z = 0; z < questions.length; z += 1) {
 }
 
 html = "You got " + correctAnswers + " question(s) right.";
+html += '<h2>You got these questions correct:</h2>';
+html += buildList(correct);
+html += '<h2>You got these questions wrong:</h2>';
+html += buildList(wrong);
 print(html);
